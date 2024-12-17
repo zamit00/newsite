@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .then(response => response.text())
           .then(data => {
 	 madad=data.split(",");	 
-		console.log(madad[0]+":"+madad[1]+ madad.indexOf('-101990');
+		console.log(madad[0]+":"+madad[1]+ madad.indexOf('-101990'));
 	
 })
 	.catch(error => console.error('Error:', error))	
