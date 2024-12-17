@@ -4,7 +4,8 @@
 /* הגדרות כלליות */
 
    header{width: 100vw;height: 22vh;position: fixed;top:0;background-color: #333;
-   }
+   z-index:1000;}
+   
    .kot h1{color:rgb(89, 227, 89);position: absolute; left: 50%; transform: translateX(-50%);
        top: 1vh;}
    .kot h2{color:white;position: absolute; left: 50%; transform: translateX(-50%);top: 7vh;}
