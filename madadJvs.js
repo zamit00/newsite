@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
  fetch('madadim.txt')
           .then(response => response.text())
           .then(data => {
-	  console.log(data);
+	  console.log('ok');
 	
 })
 	.catch(error => console.error('Error:', error))	
