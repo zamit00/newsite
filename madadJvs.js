@@ -1,21 +1,3 @@
-let madad;
- function databring() {
-
- fetch('madadim.txt')
-          .then(response => response.text())
-          .then(data => {
-	madad=data.split(","); 
-		
-	
-})
-	.catch(error => console.error('Error:', error))	
-}
-    
-
-
-
-			 
-
 
 const todayd=new Date();
 
