@@ -1,4 +1,4 @@
-body{font-family: Arial, Helvetica, sans-serif;font-size: 16px;margin: 0%;padding: 0;
+body{font-family: Arial, Helvetica, sans-serif;font-size: 16px;margin: 0%;padding-top: 20vh;
 }
 #tables{display: none;}
 @media only screen and (min-width: 767px){
@@ -37,7 +37,7 @@ body{font-family: Arial, Helvetica, sans-serif;font-size: 16px;margin: 0%;paddin
 @media only screen and (max-width: 768px){
   .xsign{color:white;position:fixed;left:20px;top:20px;}
   .logo{position: fixed;right: 20.5vw;top:3vh;width:70px; height:auto;} 
-  body{display: flex;flex-direction: column;align-items: center;}
+  body{display: flex;flex-direction: column;align-items: center;padding-top: 20vh;}
   header{width: 100vw;box-sizing: border-box;}
   main{display:flex;flex-direction: column;align-items: center;  height: auto;width: 100vw;box-sizing: border-box;margin: 0%;padding: 0%;box-sizing: border-box;}
   .logo{position: fixed;right: 2vw;top:3vh;width:80px; height:auto;}
