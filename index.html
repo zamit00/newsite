@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keseftsomeach</title>
+    <link rel="stylesheet" href="koteretstyle.css"/>
+    <link rel="stylesheet" href="madasformat.css"/>
+    <script src="madadJvs.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+  <script>
+    function clsw(){window.close()}
+
+ function formatNumber(input) {
+  // הסרת כל תווים שאינם ספרות
+  const numericValue = input.value.replace(/[^\d]/g, '');
+
+  // המרת המספר לעיצוב עם פסיקים
+  const formattedValue = numericValue ? parseInt(numericValue, 10).toLocaleString() : '';
+
+  // עדכון השדה עם הערך המעוצב
+  input.value = formattedValue;
+}
+  </script>
+  <style>
+      .xsign{color:white;position:fixed;left:20px;top:20px;}
+       main{max-width:650px;max-height:600px}
+      body{display:flex;flex-direction: column;align-items:center;}
+  </style>
+</head>
+
+<body dir="rtl" style="margin: auto;" >
+    
+    
+    <!-- <button style="width: 100px; height: 50px;" onclick="test()"></button> -->
+       
+   <header onclick="clsw()">
+        <div class='xsign'>X</div>
+        <div class="kot">
+             <h1>כסף צומח</h1>
+             <h2>קופות גמל וקרנות השתלמות</h2>
+             <img src="aziz.png" alt="logo" class="logo" id="log" >
+         </div>
+    </header> 
+    <main>
+	    <div class="headkot"> מחשבון הצמדה למדד </div>
+    
+        <div class="shita" id="shita">
+            <div class="lbldiv">השיטה</div>
+            <div class="rd">
+                <input type="radio" name="shita" class="boded"  id="boded" onchange="shita()" checked>
+                <label>חישוב בודד</label>
+            </div>
+            <div class="up">
+                <div class="rd">
+                    <input type="radio" name="shita" class="kovetz" id="kovetz" onchange="shita()">
+                    <label>העלאת קובץ (לפי מדד ידוע)</label>
+                </div>
+            </div>
+            <div class='btnlblup' id="btnlblup">
+                <input type="file" id="input-excel" class="btnup"
+                accept=".xlsx, .xls" onchange="yavee(event)" value="בחר"/>
+                <pre id="fileCntent"></pre>
+            </div>
+        </div>
+        
+       
+        
+        <div class="madadstyle" id="madadstyle">
+            <div >
+                <div class="lbldiv">סוג מדד</div>
+                <div class="rd">
+                    <input type="radio" name="madad" class="boded"  id="yadoa" checked>
+                    <label>מדד ידוע</label>
+                </div>
+                <div class="rd">
+                    <input type="radio" name="madad" class="kovetz" id="begin" >
+                    <label>מדד בגין</label>
+                </div>
+            
+            </div>
+        </div>
+
+        
+        <div class="taarich" id="taarich">
+            <div class="lbldiv">תאריכים </div>
+             <div class="rd">  
+                <label for="datefrom" class="lbl" style='font-size:16px' >בחר תאריך מ</label>
+                <input type="date" class="dated" id="datefrom" min="1952-01-01" lang="he" dir="rtl" required>
+            </div>
+            <div  class="rd">
+                <label for="datefrom" class="lbl" style='font-size:16px' >בחר תאריך עד</label>
+                <input type="date" class="dated" id="dateto" min="1952-01-01" lang="he" dir="rtl" required>
+            </div>
+        </div>
+        
+	    <div class="schom" id="schomdiv">
+            <div class="lbldiv">סכום </div>
+            <div class="rd sch"> 
+                <label for="schom"  style='font-size:16px' class="lbl">הקלד סכום</label>
+	             <input type="text" id="schom" placeholder="לדוגמה: 1000"  required inputmode="numeric" oninput="formatNumber(this)" />
+            </div>
+        </div>
+        <div class="btnhashev" id="hashevdiv">
+            <div class=" hashev"> 
+                <input type="button" onclick="cnl()" class="btn" value="חשב" id="hashev"/>
+            </div>
+        </div>
+        <div id="tables">
+            <table class="tbltozaa">
+                <tr>
+                    <th class="wt">תאריך</th>
+                    <th class="wt">חודש מדד</th>
+                    <th>מדד (בסיס 1951)</th>
+                </tr>
+                <tr>
+                    <td class="algn" id="frt1"></td>
+                    <td class="algn" id="md1"></td>
+                    <td class="algn" id="nm1"></td>
+                </tr>
+                <tr>
+                    <td class="algn" id="frt2"></td>
+                    <td class="algn" id="md2"></td>
+                    <td class="algn" id="nm2"></td>
+                </tr>
+            </table>
+	        <table class="tbltozaaH">
+                <tr>
+                    <th class="wtd thtozz">סכום הפקדה</th>
+                    <td colspan="2" id="tozk"></td>  
+                </tr>
+                <tr>
+                    <th  class="thtozz">סכום צמוד למדד</th>
+                    <td colspan="2" id="tozm"></td>  
+                </tr>
+            </table>
+        </div>    
+    <!-- מקום להציג את הנתונים -->   
+        <div id="output"></div>
+    </main>	
+</body>
+</html>
