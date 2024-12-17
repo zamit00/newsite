@@ -22,8 +22,6 @@
   input.value = formattedValue;
 }
   </script>
-<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-<script>eruda.init();</script>	
   <style>
       .xsign{color:white;position:fixed;left:20px;top:20px;}
        main{max-width:650px;max-height:600px}
@@ -41,7 +39,7 @@
         <div class="kot">
              <h1>כסף צומח</h1>
              <h2>קופות גמל וקרנות השתלמות</h2>
-            <!-- <img src="aziz.png" alt="logo" class="logo" id="log" > -->
+             <img src="aziz.png" alt="logo" class="logo" id="log" >
          </div>
     </header> 
     <main>
@@ -55,7 +53,7 @@
             </div>
             <div class="up">
                 <div class="rd">
-                    <input type="radio" name="shita" class="kovetz" id="kovetz" onchange="shita()">
+                    <input type="radio" name="shita" class="kovetz" id="kovetz" onchange="shita();chng()">
                     <label>העלאת קובץ (לפי מדד ידוע)</label>
                 </div>
             </div>
@@ -72,11 +70,11 @@
             <div >
                 <div class="lbldiv">סוג מדד</div>
                 <div class="rd">
-                    <input type="radio" name="madad" class="boded"  id="yadoa" checked>
+                    <input type="radio" name="madad" class="boded"  id="yadoa" onchange="chng()" checked>
                     <label>מדד ידוע</label>
                 </div>
                 <div class="rd">
-                    <input type="radio" name="madad" class="kovetz" id="begin" >
+                    <input type="radio" name="madad" class="kovetz" id="begin" onchange="chng()">
                     <label>מדד בגין</label>
                 </div>
             
@@ -88,11 +86,13 @@
             <div class="lbldiv">תאריכים </div>
              <div class="rd">  
                 <label for="datefrom" class="lbl" style='font-size:16px' >בחר תאריך מ</label>
-                <input type="date" class="dated" id="datefrom" min="1952-01-01" lang="he" dir="rtl" required>
+                <input type="date" class="dated" id="datefrom" min="1952-01-01" lang="he" dir="rtl"
+                onchange="chng()" required>
             </div>
             <div  class="rd">
                 <label for="datefrom" class="lbl" style='font-size:16px' >בחר תאריך עד</label>
-                <input type="date" class="dated" id="dateto" min="1952-01-01" lang="he" dir="rtl" required>
+                <input type="date" class="dated" id="dateto" min="1952-01-01" lang="he" dir="rtl" 
+                onchange="chng()" required>
             </div>
         </div>
         
@@ -100,7 +100,8 @@
             <div class="lbldiv">סכום </div>
             <div class="rd sch"> 
                 <label for="schom"  style='font-size:16px' class="lbl">הקלד סכום</label>
-	             <input type="text" id="schom" placeholder="לדוגמה: 1000"  required inputmode="numeric" oninput="formatNumber(this)" />
+	             <input type="text" id="schom" placeholder="לדוגמה: 1000"  required inputmode="numeric"
+                  oninput="formatNumber(this)" onchange="chng()"/>
             </div>
         </div>
         <div class="btnhashev" id="hashevdiv">
