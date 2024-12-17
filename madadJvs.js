@@ -114,9 +114,10 @@ else{
     const madad=data.split(",");
     
     var x= madad.indexOf (String("-"+formatdatef));
+    if(x===-1){alert('מדד לא קיים-בדוק תאריכים');return;}
     const madadf= Number(madad.slice(x+1, x+2))*-1;
-    console.log(formatdatet);
     var x= madad.indexOf (String("-"+formatdatet));
+    if(x===-1){alert('מדד לא קיים-בדוק תאריכים');return;}
     const madadt= Number(madad.slice(x+1, x+2))*-1;
 
 
@@ -147,7 +148,17 @@ else{
       
 }
 
-
+function chng(){
+    document.getElementById('frt1').textContent="";
+    document.getElementById('frt2').textContent="";
+    document.getElementById('md1').textContent="";
+    document.getElementById('md2').textContent="";
+    document.getElementById('nm1').textContent="";
+    document.getElementById('nm2').textContent="";
+    document.getElementById('tozk').textContent="";
+    document.getElementById('tozm').textContent="";
+    document.getElementById('tables').style.display="none";
+}
 
 function yavee(e) {
             
