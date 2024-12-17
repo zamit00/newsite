@@ -108,12 +108,12 @@ else{
     formatdatet=String(montht)+String(yeart);    
 }  
 
-
+let madad;
 
     fetch('madadim.txt')
           .then(response => response.text())
           .then(data => {
-	 var madad=data.split(","); 
+	  madad=data.split(","); 
 		
 	
 })
@@ -274,12 +274,12 @@ table.style.display = 'block';
             formatdate="-"+String(mo-1)+String(yr);
         }
         
-
+let madad;
 
 fetch('madadim.txt')
           .then(response => response.text())
           .then(data => {
-	var madad=data.split(","); 
+	 madad=data.split(","); 
 		
 	
 })
