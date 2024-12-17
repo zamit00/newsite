@@ -125,15 +125,19 @@ else{
     formatdatet=String(montht)+String(yeart);    
 }  
 
-    	
+
+
+ 
     var x= madad.indexOf (Number("-"+formatdatef));
     const madadf= madad.slice(x+1, x+2)*-1;
 
-    console.log(Number("-"+formatdatef) + ":" + madadf)
+    var x1= madad.indexOf ("-"+formatdatef);
+    const madadf1= madad.slice(x+1, x+2)*-1;
+    console.log(madadf + ":" + madadf1)
 	
     var x= madad.indexOf (Number("-"+formatdatet));
     const madadt= madad.slice(x+1, x+2)*-1;
-    console.log(Number("-"+formatdatet) + ":" + madadt)
+    
 
 
     /*if(isNaN(x)|| x===0){alert('לא קיים מדד בגין לתאריך הנבחר');return;}
