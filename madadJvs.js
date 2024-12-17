@@ -1,11 +1,11 @@
-let madad;
-document.addEventListener('DOMContentLoaded', function() {
+
+ function databring() {
 
  fetch('madadim.txt')
           .then(response => response.text())
           .then(data => {
-	 madad=data.split(",");	 
-		console.log(madad[0]+":"+madad[1]+":"+ madad.slice(madad.indexOf('-101990')+1,madad.indexOf('-101990')+2));
+	return data.split(","); 
+		
 	
 })
 	.catch(error => console.error('Error:', error))	
@@ -128,7 +128,7 @@ else{
 
 
 
- 
+    const madad=databring();
     var x= madad.indexOf (Number("-"+formatdatef));
     const madadf= madad.slice(x+1, x+2)*-1;
 
@@ -144,7 +144,7 @@ else{
     /*if(isNaN(x)|| x===0){alert('לא קיים מדד בגין לתאריך הנבחר');return;}
     */
    
-    var schommemudad=(schom*madadt/madadf).toFixed(2);
+    var schommemudad=(schom*t/f).toFixed(2);
     schommemudad=Number(schommemudad).toLocaleString();
     
     document.getElementById('frt1').textContent=dayf+"/"+monthf+"/"+yearf;
@@ -287,7 +287,7 @@ table.style.display = 'block';
         
 
 
-        
+const madad=databring();        
 var x= madad.indexOf (Number(formatdate));
         
         //if(mads=2){x=x+2};
