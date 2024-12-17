@@ -1,10 +1,10 @@
-
+let madad;
  function databring() {
 
  fetch('madadim.txt')
           .then(response => response.text())
           .then(data => {
-	return data.split(","); 
+	madad=data.split(","); 
 		
 	
 })
@@ -128,7 +128,7 @@ else{
 
 
 
-    const madad=databring();
+    databring();
     var x= madad.indexOf (Number("-"+formatdatef));
     const madadf= madad.slice(x+1, x+2)*-1;
 
@@ -287,7 +287,7 @@ table.style.display = 'block';
         
 
 
-const madad=databring();        
+databring();        
 var x= madad.indexOf (Number(formatdate));
         
         //if(mads=2){x=x+2};
