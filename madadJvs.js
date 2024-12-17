@@ -128,7 +128,15 @@ else{
 
 
 
-    databring();
+    fetch('madadim.txt')
+          .then(response => response.text())
+          .then(data => {
+	 var madad=data.split(","); 
+		
+	
+})
+	.catch(error => console.error('Error:', error))	
+
     var x= madad.indexOf ("-"+formatdatef);
     const madadf= madad.slice(x+1, x+2)*-1;
 
@@ -286,7 +294,15 @@ table.style.display = 'block';
         
 
 
-databring();        
+fetch('madadim.txt')
+          .then(response => response.text())
+          .then(data => {
+	var madad=data.split(","); 
+		
+	
+})
+	.catch(error => console.error('Error:', error))	
+
 var x= madad.indexOf (formatdate);
         
         //if(mads=2){x=x+2};
