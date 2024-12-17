@@ -129,14 +129,13 @@ else{
 
 
     databring();
-    var x= madad.indexOf (Number("-"+formatdatef));
+    var x= madad.indexOf ("-"+formatdatef);
     const madadf= madad.slice(x+1, x+2)*-1;
 
-    var x1= madad.indexOf ("-"+formatdatef);
-    const madadf1= madad.slice(x+1, x+2)*-1;
+   
     console.log(madadf + ":" + madadf1)
 	
-    var x= madad.indexOf (Number("-"+formatdatet));
+    var x= madad.indexOf ("-"+formatdatet);
     const madadt= madad.slice(x+1, x+2)*-1;
     
 
@@ -288,7 +287,7 @@ table.style.display = 'block';
 
 
 databring();        
-var x= madad.indexOf (Number(formatdate));
+var x= madad.indexOf (formatdate);
         
         //if(mads=2){x=x+2};
         
