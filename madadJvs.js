@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
  fetch('madadim.txt')
           .then(response => response.text())
           .then(data => {
-	 madad=data.split(",");	  
+	 madad=data.split(",");	 
+		console.log(madad[0]+":"+madad[1]);
 	
 })
 	.catch(error => console.error('Error:', error))	
