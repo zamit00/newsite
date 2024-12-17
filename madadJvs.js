@@ -103,57 +103,97 @@ function bodedf(x) {
     }
 }
 else{
+function bodedf(x) {
+    let df = document.getElementById('datefrom');
+    let dt = document.getElementById('dateto');
     
-    formatdatef=String(monthf)+String(yearf);  
-    formatdatet=String(montht)+String(yeart);    
-}  
+    let datef = new Date(df.value); 
+    let datet = new Date(dt.value); 
+    const numericValue = document.getElementById('schom').value.replace(/[^\d]/g, '');
+    const schom = parseFloat(numericValue);
+    
+    if (isNaN(datef) || isNaN(datet) || datef > datet) {
+        alert('בדוק תקינות תאריכים');
+        return;
+    }
+    if (!schom) {
+        alert('חסר סכום');
+        return;
+    }
+    
+    let dayf = datef.getDate();
+    let monthf = datef.getMonth() + 1;
+    let yearf = datef.getFullYear();
+    
+    let dayt = datet.getDate();
+    let montht = datet.getMonth() + 1;
+    let yeart = datet.getFullYear();
+    
+    let formatdatef, formatdatet;
 
-let madad;
+    if (x === "yadoa") {
+        if (dayf < 15 && Number(monthf) < 3) {
+            formatdatef = String(monthf + 10) + String(yearf - 1);    
+        } else if (dayf >= 15 && Number(monthf) === 1) {
+            formatdatef = "12" + String(yearf - 1);   
+        } else if (dayf < 15) {
+            formatdatef = String(monthf - 2) + String(yearf);    
+        } else {
+            formatdatef = String(monthf - 1) + String(yearf);
+        }
 
+        if (dayt < 15 && Number(montht) < 3) {
+            formatdatet = String(montht + 10) + String(yeart - 1);    
+        } else if (dayt >= 15 && Number(montht) === 1) {
+            formatdatet = "12" + String(yeart - 1);   
+        } else if (dayt < 15) {
+            formatdatet = String(montht - 2) + String(yeart);    
+        } else {
+            formatdatet = String(montht - 1) + String(yeart);
+        }
+    } else {
+        formatdatef = String(monthf) + String(yearf);  
+        formatdatet = String(montht) + String(yeart);    
+    }
+
+    // קריאה לקובץ ה-txt וטעינת המדדים
     fetch('madadim.txt')
-          .then(response => response.text())
-          .then(data => {
-	  madad=data.split(","); 
-		
-	
-})
-	.catch(error => console.error('Error:', error))	
+        .then(response => response.text())
+        .then(data => {
+            let madad = data.split(",");
 
-    var x= madad.indexOf ("-"+formatdatef);
-    const madadf= madad.slice(x+1, x+2)*-1;
+            let x1 = madad.indexOf("-" + formatdatef);
+            const madadf = madad.slice(x1 + 1, x1 + 2) * -1;
 
-   
-    console.log(madadf + ":" + madadf1)
-	
-    var x= madad.indexOf ("-"+formatdatet);
-    const madadt= madad.slice(x+1, x+2)*-1;
-    
+            let x2 = madad.indexOf("-" + formatdatet);
+            const madadt = madad.slice(x2 + 1, x2 + 2) * -1;
 
+            if (isNaN(madadf) || isNaN(madadt)) {
+                alert('לא קיים מדד בגין התאריכים הנבחרים');
+                return;
+            }
 
-    /*if(isNaN(x)|| x===0){alert('לא קיים מדד בגין לתאריך הנבחר');return;}
-    */
-   
-    var schommemudad=(schom*t/f).toFixed(2);
-    schommemudad=Number(schommemudad).toLocaleString();
-    
-    document.getElementById('frt1').textContent=dayf+"/"+monthf+"/"+yearf;
-    document.getElementById('frt2').textContent=dayt+"/"+montht+"/"+yeart;
+            let schommemudad = ((schom * madadt) / madadf).toFixed(2);
+            schommemudad = Number(schommemudad).toLocaleString();
 
-    document.getElementById('md1').textContent=formatdatef.slice(0,formatdatef.length-4)+"/"+
-    formatdatef.slice(formatdatef.length-4,formatdatef.length);
-    document.getElementById('md2').textContent=formatdatet.slice(0,formatdatet.length-4)+"/"+
-    formatdatet.slice(formatdatet.length-4,formatdatet.length);
+            // עדכון ה-HTML עם הנתונים
+            document.getElementById('frt1').textContent = dayf + "/" + monthf + "/" + yearf;
+            document.getElementById('frt2').textContent = dayt + "/" + montht + "/" + yeart;
 
+            document.getElementById('md1').textContent = formatdatef.slice(0, formatdatef.length - 4) + "/" +
+                formatdatef.slice(formatdatef.length - 4, formatdatef.length);
+            document.getElementById('md2').textContent = formatdatet.slice(0, formatdatet.length - 4) + "/" +
+                formatdatet.slice(formatdatet.length - 4, formatdatet.length);
 
-    document.getElementById('nm1').textContent=madadf.toFixed(2);
-    document.getElementById('nm2').textContent=madadt.toFixed(2);
+            document.getElementById('nm1').textContent = madadf.toFixed(2);
+            document.getElementById('nm2').textContent = madadt.toFixed(2);
 
-    document.getElementById('tozk').textContent=Number(schom).toLocaleString()+' ש"ח';
-    document.getElementById('tozm').textContent=schommemudad+' ש"ח';
-    document.getElementById('tables').style.display="block";
-    
+            document.getElementById('tozk').textContent = Number(schom).toLocaleString() + ' ש"ח';
+            document.getElementById('tozm').textContent = schommemudad + ' ש"ח';
+            document.getElementById('tables').style.display = "block";
+        })
+        .catch(error => console.error('Error:', error));
 }
-
 
 function yavee(e) {
             
