@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
  fetch('madadim.txt')
           .then(response => response.text())
           .then(data => {
-	  console.log('ok');
-	  console.log(data);
 	 madad=data;	  
 	
 })
@@ -130,9 +128,12 @@ else{
     	
     var x= madad.indexOf (Number("-"+formatdatef));
     const madadf= madad.slice(x+1, x+2)*-1;
+
+    console.log(Number("-"+formatdatef) + ":" + madadf)
+	
     var x= madad.indexOf (Number("-"+formatdatet));
     const madadt= madad.slice(x+1, x+2)*-1;
-
+    console.log(Number("-"+formatdatef) + ":" + madadf)
 
 
     /*if(isNaN(x)|| x===0){alert('לא קיים מדד בגין לתאריך הנבחר');return;}
