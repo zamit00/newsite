@@ -1,145 +1,55 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41JX3YK216"></script>
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41JX3YK216');
+</script>
+    <meta property="og:title" content="פיננסי-נט">
+    <meta property="og:description" content="אתר השוואה לנתוני קופות גמל, קרנות השתלמות, קרנות פנסיה ופוליסות חסכון ">
+    <meta property="og:image" content="https://i.postimg.cc/L4YLr22D/logoxnew.png">
+    <meta property="og:url" content="https://zamit00.github.io">
+    <meta property="og:type" content="website">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>keseftsomeach</title>
-    <link rel="stylesheet" href="koteretstyle.css"/>
-    <link rel="stylesheet" href="madasformat.css"/>
-    <script src="madadJvs.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
-  <script>
-    function clsw(){window.close()}
-
- function formatNumber(input) {
-  // הסרת כל תווים שאינם ספרות
-  const numericValue = input.value.replace(/[^\d]/g, '');
-
-  // המרת המספר לעיצוב עם פסיקים
-  const formattedValue = numericValue ? parseInt(numericValue, 10).toLocaleString() : '';
-
-  // עדכון השדה עם הערך המעוצב
-  input.value = formattedValue;
-}
-  </script>
-  <style>
-      .xsign{color:white;position:fixed;left:20px;top:20px;}
-       main{max-width:650px;max-height:600px}
-      body{display:flex;flex-direction: column;align-items:center;}
-  </style>
+    <meta name="description" content="כאן תמצאו מידע מקיף על קופות גמל, קרנות השתלמות, קרנות פנסיה ופוליסות חסכון פרט, כולל השוואת נתונים, מחשבונים פיננסיים מתקדמים ותוכן מקצועי שיעזור לכם לקבל החלטות
+	    חכמות בנוגע לחיסכון הפנסיוני שלכם.">
+	<title> פיננסי-נט</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> 
+	<link rel="stylesheet" href="mainStyleX.css">
+  <script src="script1.js" defer></script>
+  <script src="script2.js" defer></script>
+<script>
+  eruda.init();
+</script>
 </head>
-
-<body dir="rtl" style="margin: auto;" >
-    
-    
-    <!-- <button style="width: 100px; height: 50px;" onclick="test()"></button> -->
-       
-   <header onclick="clsw()">
-        <div class='xsign'>X</div>
-        <div class="kot">
-             <h1>כסף צומח</h1>
-             <h2>קופות גמל וקרנות השתלמות</h2>
-             <img src="aziz.png" alt="logo" class="logo" id="log" >
-         </div>
-    </header> 
-    <main>
-	    <div class="headkot"> מחשבון הצמדה למדד </div>
-    
-        <div class="shita" id="shita">
-            <div class="lbldiv">השיטה</div>
-            <div class="rd">
-                <input type="radio" name="shita" class="boded"  id="boded" onchange="shita()" checked>
-                <label>חישוב בודד</label>
-            </div>
-            <div class="up">
-                <div class="rd">
-                    <input type="radio" name="shita" class="kovetz" id="kovetz" onchange="shita();chng()">
-                    <label>העלאת קובץ (לפי מדד ידוע)</label>
-                </div>
-            </div>
-            <div class='btnlblup' id="btnlblup">
-                <input type="file" id="input-excel" class="btnup"
-                accept=".xlsx, .xls" onchange="yavee(event)" value="בחר"/>
-                <pre id="fileCntent"></pre>
-            </div>
-        </div>
-        
-       
-        
-        <div class="madadstyle" id="madadstyle">
-            <div >
-                <div class="lbldiv">סוג מדד</div>
-                <div class="rd">
-                    <input type="radio" name="madad" class="boded"  id="yadoa" onchange="chng()" checked>
-                    <label>מדד ידוע</label>
-                </div>
-                <div class="rd">
-                    <input type="radio" name="madad" class="kovetz" id="begin" onchange="chng()">
-                    <label>מדד בגין</label>
-                </div>
-            
-            </div>
-        </div>
-
-        
-        <div class="taarich" id="taarich">
-            <div class="lbldiv">תאריכים </div>
-             <div class="rd">  
-                <label for="datefrom" class="lbl" style='font-size:16px' >בחר תאריך מ</label>
-                <input type="date" class="dated" id="datefrom" min="1952-01-01" lang="he" dir="rtl"
-                onchange="chng()" required>
-            </div>
-            <div  class="rd">
-                <label for="datefrom" class="lbl" style='font-size:16px' >בחר תאריך עד</label>
-                <input type="date" class="dated" id="dateto" min="1952-01-01" lang="he" dir="rtl" 
-                onchange="chng()" required>
-            </div>
-        </div>
-        
-	    <div class="schom" id="schomdiv">
-            <div class="lbldiv">סכום </div>
-            <div class="rd sch"> 
-                <label for="schom"  style='font-size:16px' class="lbl">הקלד סכום</label>
-	             <input type="text" id="schom" placeholder="לדוגמה: 1000"  required inputmode="numeric"
-                  oninput="formatNumber(this)" onchange="chng()"/>
-            </div>
-        </div>
-        <div class="btnhashev" id="hashevdiv">
-            <div class=" hashev"> 
-                <input type="button" onclick="cnl()" class="btn" value="חשב" id="hashev"/>
-            </div>
-        </div>
-        <div id="tables">
-            <table class="tbltozaa">
-                <tr>
-                    <th class="wt">תאריך</th>
-                    <th class="wt">חודש מדד</th>
-                    <th>מדד (בסיס 1951)</th>
-                </tr>
-                <tr>
-                    <td class="algn" id="frt1"></td>
-                    <td class="algn" id="md1"></td>
-                    <td class="algn" id="nm1"></td>
-                </tr>
-                <tr>
-                    <td class="algn" id="frt2"></td>
-                    <td class="algn" id="md2"></td>
-                    <td class="algn" id="nm2"></td>
-                </tr>
-            </table>
-	        <table class="tbltozaaH">
-                <tr>
-                    <th class="wtd thtozz">סכום הפקדה</th>
-                    <td colspan="2" id="tozk"></td>  
-                </tr>
-                <tr>
-                    <th  class="thtozz">סכום צמוד למדד</th>
-                    <td colspan="2" id="tozm"></td>  
-                </tr>
-            </table>
-        </div>    
-    <!-- מקום להציג את הנתונים -->   
-        <div id="output"></div>
-    </main>	
+<body>
+  <header class="header">
+ 	<img src="logoxnew.png" class="logo" id="logo">
+</header>
+<main>
+  <div class="meidaMuzar" id="mabaatar">
+		<div  style="width:100%;position:absolute;top:0;right:0;height:100%;
+			background-color:aliceblue;">
+			<p class="pMuzarSmall" style="text-align:right;padding:5px 10px 5px 10px;margin:0;width:100%;">
+				אתר <span style="color:darkgreen;font-size:larger;font-weight:bolder;">פיננסי</span>
+				<span style="color:darkblue;font-size:larger;font-weight:bolder;">-נט</span>
+				הוא אתר ידידותי ונוח לביצוע השוואות בין מוצרים פנסיונים ופיננסיים. האתר
+				מספק מחוללי השוואה, מחוללי איתור מוצרים לפי סיכון וכלים פיננסיים.
+				 הנתונים באתר מבוססים על פירסומי  רשות שוק ההון באתרים גמל נט, ביטוח נט ופנסיה נט.
+			</p>
+		</div>
+	</div>
+</main>
 </body>
 </html>
