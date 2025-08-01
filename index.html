@@ -582,7 +582,6 @@
             }
 			.slider-touch {
 				width: 100%;
-				text-align: center;
 				font-size: 1.2rem;
 				color: #fff;
 				z-index: 1000;
@@ -590,7 +589,8 @@
 				top:10%;
 				display: flex;
 				justify-content: space-between;
-				padding: 30px;
+				padding: 0 20px;
+
 			}
         }
     </style>
@@ -696,7 +696,7 @@
             </div>
         </div>
 		<div class="slider-touch">
-			<span>❮❮❮ </span> <span> החלק </span>   <span> ❯❯❯</span></div>
+			<span onclick="prevSlide();resetInterval();">❮❮❮ </span>    <span onclick="nextSlide();resetInterval();"> ❯❯❯</span></div>
         <div class="slider-nav">
 			
             <div class="slider-dot active" data-slide="0"></div>
