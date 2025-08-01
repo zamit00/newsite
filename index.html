@@ -768,6 +768,120 @@
     </div>
 
    <script>
+	  // Touch support for slider
+let touchStartX = 0;
+let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
+let isSwiping = false;
+
+const heroSection = document.querySelector('.hero');
+
+// Touch start
+heroSection.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+    isSwiping = true;
+    
+    // Pause auto-advance during touch
+    clearInterval(slideInterval);
+}, { passive: true });
+
+// Touch move - prevent scrolling during horizontal swipe
+heroSection.addEventListener('touchmove', (e) => {
+    if (!isSwiping) return;
+    
+    const touchCurrentX = e.changedTouches[0].screenX;
+    const touchCurrentY = e.changedTouches[0].screenY;
+    
+    const diffX = Math.abs(touchCurrentX - touchStartX);
+    const diffY = Math.abs(touchCurrentY - touchStartY);
+    
+    // If horizontal movement is greater than vertical, prevent scroll
+    if (diffX > diffY && diffX > 10) {
+        e.preventDefault();
+    }
+}, { passive: false });
+
+// Touch end
+heroSection.addEventListener('touchend', (e) => {
+    if (!isSwiping) return;
+    
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    
+    const diffX = touchStartX - touchEndX;
+    const diffY = Math.abs(touchStartY - touchEndY);
+    const minSwipeDistance = 50;
+    
+    // Check if it's a horizontal swipe (not vertical scroll)
+    if (Math.abs(diffX) > minSwipeDistance && Math.abs(diffX) > diffY) {
+        if (diffX > 0) {
+            // Swipe left - next slide
+            nextSlide();
+        } else {
+            // Swipe right - previous slide
+            prevSlide();
+        }
+    }
+    
+    isSwiping = false;
+    
+    // Resume auto-advance
+    resetInterval();
+}, { passive: true });
+
+// Mouse support for desktop (drag)
+let mouseDown = false;
+let mouseStartX = 0;
+
+heroSection.addEventListener('mousedown', (e) => {
+    mouseDown = true;
+    mouseStartX = e.clientX;
+    clearInterval(slideInterval);
+});
+
+heroSection.addEventListener('mousemove', (e) => {
+    if (!mouseDown) return;
+    e.preventDefault();
+});
+
+heroSection.addEventListener('mouseup', (e) => {
+    if (!mouseDown) return;
+    
+    const mouseEndX = e.clientX;
+    const diff = mouseStartX - mouseEndX;
+    const minDragDistance = 50;
+    
+    if (Math.abs(diff) > minDragDistance) {
+        if (diff > 0) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+    }
+    
+    mouseDown = false;
+    resetInterval();
+});
+
+heroSection.addEventListener('mouseleave', () => {
+    if (mouseDown) {
+        mouseDown = false;
+        resetInterval();
+    }
+});
+
+// Keyboard support
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetInterval();
+    } else if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetInterval();
+    }
+}); 
         // Mobile menu toggle
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
