@@ -363,10 +363,12 @@
 
         .slider-arrow.prev {
             left: 30px;
+	     display: block;
         }
 
         .slider-arrow.next {
             right: 30px;
+            display: block;
         }
 
         /* Features Section */
@@ -485,7 +487,9 @@
          }
         /* Mobile Responsive */
         @media (max-width: 768px) {
-        
+        .slider-arrow.prev,.slider-arrow.next {
+           display: none;
+        }
             .feature-title {
                height: 25%;}
 
