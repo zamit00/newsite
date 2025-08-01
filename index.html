@@ -494,7 +494,6 @@
         @media (max-width: 768px) {
 		.hero-text h1 {
             font-size: 1.5rem;
-			margin-top: 15px;
         }
         .slider-arrow.prev,.slider-arrow.next {
            display: none;
@@ -590,7 +589,8 @@
 				position: relative;
 				top:10%;
 				display: flex;
-				justify-content: center;
+				justify-content: space-between;
+				padding: 30px;
 			}
         }
     </style>
@@ -695,7 +695,8 @@
                 </div>
             </div>
         </div>
-		<div class="slider-touch">❮❮❮❮ החלק ימינה ושמאלה ❯❯❯❯</div>
+		<div class="slider-touch">
+			<span>❮❮❮ </span> <span> החלק </span>   <span> ❯❯❯</span></div>
         <div class="slider-nav">
 			
             <div class="slider-dot active" data-slide="0"></div>
