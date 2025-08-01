@@ -363,12 +363,16 @@
 
         .slider-arrow.prev {
             left: 30px;
-			display: block;
+			display: flex;
+			align-items: center;
+			justify-content: center;
         }
 
         .slider-arrow.next {
             right: 30px;
-			display: block;
+			display: flex;
+			align-items: center;
+			justify-content: center;
         }
 
         /* Features Section */
@@ -478,6 +482,7 @@
                 height: auto;
                 
             }
+	.slider-touch {display: none;}
          @media (max-width: 1200px) {
             .logoimg{
                 width: 200px;
@@ -488,7 +493,8 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
 		.hero-text h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+			margin-top: 15px;
         }
         .slider-arrow.prev,.slider-arrow.next {
            display: none;
@@ -575,6 +581,17 @@
             .slider-arrow.next {
                 left: 15px;
             }
+			.slider-touch {
+				width: 100%;
+				text-align: center;
+				font-size: 1.2rem;
+				color: #fff;
+				z-index: 1000;
+				position: relative;
+				top:10%;
+				display: flex;
+				justify-content: center;
+			}
         }
     </style>
 </head>
@@ -600,7 +617,7 @@
         </div>
     </header>
 
-    <section class="hero" id="home">
+    <section dir="rtl" class="hero" id="home">
         <div class="slider-container">
             <div class="slide active">
                 <div class="hero-content">
@@ -678,15 +695,17 @@
                 </div>
             </div>
         </div>
+		<div class="slider-touch">❮❮❮❮ החלק ימינה ושמאלה ❯❯❯❯</div>
         <div class="slider-nav">
+			
             <div class="slider-dot active" data-slide="0"></div>
             <div class="slider-dot" data-slide="1"></div>
             <div class="slider-dot" data-slide="2"></div>
             <div class="slider-dot" data-slide="3"></div>
             <div class="slider-dot" data-slide="4"></div>
         </div>
-        <div class="slider-arrow prev">❮</div>
-        <div class="slider-arrow next">❯</div>
+        <div class="slider-arrow prev">❯</div>
+        <div class="slider-arrow next">❮</div>
     </section>
 
     <section class="features" id="services">
