@@ -1,0 +1,663 @@
+<html lang="heb">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+
+  <title>ezFinnaci</title>
+  
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+			margin-bottom: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+    .harel-logo {
+            text-align: center;
+            margin-top: 30px;
+            width: 250px;
+            height: auto;
+            margin: 20vh  auto 10px auto;
+        }
+       
+
+       .logos {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+			position: relative;
+			bottom: 25px;
+			margin: 25px 0px;
+        }
+
+        .logos-slide {
+            display: flex;
+            animation: scroll 75s linear infinite;
+        }
+
+        .logos-slide img {
+            height: 100px; /* Adjust height as needed */
+            margin: 0 20px; /* Space between logos */
+            flex-shrink: 0;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Move half the width for seamless loop */
+            }
+        }
+
+        /* Optional: Pause animation on hover */
+        .logos:hover .logos-slide {
+            animation-play-state: paused;
+        }
+		
+
+		.logos-slide img {
+			width: 200px; /* Adjust width as needed */
+			height: 60px; /* Maintain aspect ratio */
+			margin: 10px 80px ; /* Space between logos */
+			transition: transform 0.3s ease; /* Smooth scaling effect */
+		}
+		
+		.logos-slide img:last-child {
+			margin-right: 0; /* Remove margin from the last image */
+		}
+       
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: grid;
+            grid-template-rows: 25% 25% 30% 20%;
+        }
+        .flx {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn{padding-top: 15px;}
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+           
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+             
+        }
+
+        .feature-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+             
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button-white {
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+	.logoimg{
+                width: 200px;
+                height: auto;
+                
+            }
+    .hero{max-width: 60%;text-align: justify;margin-left: 20%;}
+    .harel-description{
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+    
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 1rem;
+            }
+    }
+	
+         @media (max-width: 1200px) {
+            .logoimg{
+                width: 200px;
+                height: auto;
+                
+            }
+         }
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+		
+        
+
+            .feature-title {
+               height: 25%;}
+
+            .logoimg{
+                width: 150px;
+                height: auto;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: right 0.3s ease;
+            }
+			
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+           
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }	
+        }
+    </style>
+    <style>
+     
+
+    .hero h1, .hero h2 {
+      color: #005baa;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+    }
+
+    .hero ul {
+      padding-right: 1.2rem;
+      list-style: disc;
+    }
+
+    .hero li {
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .highlight {
+      background-color: #eef6ff;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+
+    .hero .bad {
+      background-color: #fff0f0;
+    }
+
+    .hero .good {
+      background-color: #f0fff4;
+    }
+
+    .hero .cta {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .hero .cta button {
+      background-color: #005baa;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .hero .cta button:hover {
+      background-color: #003f7d;
+    }
+
+    @media (max-width: 600px) {
+     
+
+    .hero h1 {
+        font-size: 1.5rem;
+      }
+
+    .hero h2 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+    <header class="header" dir="rtl">
+        <div class="nav-container">
+            <div class="logo"> <img class="logoimg" src="logoxnew.png"/></div>
+            <nav class="nav-menu" id="navMenu">
+                <li><a href="index2.html">בית</a></li>
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#calculators">מחשבונים</a></li>
+                                <li><a href="#about">איזור אישי</a></li>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+                <li><a href="#consultation" class="cta-button">יעוץ חינם</a></li>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section dir="rtl" class="hero" id="home">
+        <div class="harel-logo">
+            <img src="harel-logo.png" alt="Harel Logo" class="logoimg">
+        </div>
+        <h1>הראל ביטוח ופיננסים</h1>
+
+    <p>הראל היא אחת מקבוצות הביטוח והפיננסים הגדולות בישראל, עם פעילות רחבה בתחומי ביטוח, פנסיה, גמל, השקעות ושירותים פיננסיים נוספים.</p>
+
+    <h2>תחומי פעילות עיקריים</h2>
+    <div class="highlight">
+      <ul>
+        <li><strong>ביטוח:</strong> בריאות, חיים, סיעודי, רכוש ונסיעות</li>
+        <li><strong>חיסכון ארוך טווח:</strong> פנסיה, גמל, השתלמות, פוליסות חיסכון</li>
+        <li><strong>ניהול השקעות:</strong> תיקים, קופות, קרנות נאמנות</li>
+      </ul>
+    </div>
+
+    <h2>נתונים עיקריים (2024)</h2>
+    <ul>
+      <li>נכסים מנוהלים: מעל 300 מיליארד ₪</li>
+      <li>כ-4,500 עובדים</li>
+      <li>מנכ"ל: מישל סיבוני</li>
+      <li>בעלות: משפחת המבורגר</li>
+    </ul>
+
+    <h2>יתרונות בולטים</h2>
+    <div class="highlight good">
+      <ul>
+        <li>מוניטין וחוסן פיננסי</li>
+        <li>מגוון מוצרים רחב</li>
+        <li>שירותים דיגיטליים מתקדמים</li>
+        <li>פיזור השקעות ומסלולים חדשניים</li>
+      </ul>
+    </div>
+
+    <h2>אתגרים</h2>
+    <div class="highlight bad">
+      <ul>
+        <li>תחרות חזקה מצד גופים כמו אלטשולר, כלל ומגדל</li>
+        <li>רגולציה משתנה בענף הביטוח</li>
+        <li>שיפור שירות בממשקים מסוימים</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <button onclick="alert('בעתיד יוביל להשוואת מוצרי הראל')">השווה מוצרי הראל</button>
+    </div>
+    </section>
+
+    <section class="features" id="services">
+        <div class="container">
+            <h2 class="section-title">?למה לבחור בנו</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon flx"><i class="fa fa-check" style="font-size:3rem"></i></div>
+                    <h3 class="feature-title flx">יעוץ מקצועי ומותאם אישית</h3>
+                    <p class="feature-description flx">המומחים שלנו יבנו עבורך אסטרטגיה פנסיונית מותאמת למטרות ולמצב הכלכלי הייחודי שלך</p>
+                    <a href="#consultation" class="cta-button btn">קבל יעוץ</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line" style="font-size:3rem;">
+
+                    </i></div>
+                    <h3 class="feature-title">ניתוח תשואות מתקדם</h3>
+                    <p class="feature-description">בכלים שאנו מציעים תוכל לבצע ניתוחים  בצורה מקצועית וייחודית</p>
+                    <a href="hashmen.html" class="cta-button btn">השתמש בכלים</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa fa-calculator" style="font-size:3rem;"></i></div>
+                    <h3 class="feature-title">מחשבונים  מגוונים</h3>
+                    <p class="feature-description">במחשבונים שלנו תוכל לחשב ערך עתידי, הפקדה נדרשת לסכום מטרה והחזרי הלוואה חודשיים</p>
+                    <a href="help/gemelApi-main/Machshevonim.html" class="cta-button">בחר מחשבון</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-user-shield" style="font-size:3rem;"></i></div>
+                    <h3 class="feature-title">התאמת  לאופי סיכון</h3>
+                    <p class="feature-description">באמצעותנו תוכל לאפיין את רמת הסיכון שלך ואת המוצרים המתאימים לרמת הסיכון</p>
+                    <a href="#consultation" class="cta-button btn">למד עוד</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa fa-bolt" style="font-size:3rem"></i></div>
+                    <h3 class="feature-title">שירות מהיר ואמין</h3>
+                    <p class="feature-description">אצלנו תקבל מענה מקצועי ומהיר לכל שאלה, עם ליווי צמוד לאורך כל הדרך</p>
+                    <a href="#contact" class="cta-button btn">צור קשר</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 dir="rtl" class="cta-title">מוכן להתחיל לתכנן את עתידך הפנסיוני?</h2>
+            <p class="cta-subtitle">קבל יעוץ מקצועי חינם ותתחיל לנהל את הכספים שלך בדרך הנכונה והרווחית</p>
+            <a href="#consultation" class="cta-button-white">יעוץ חינם עכשיו</a>
+        </div>
+    </section>	
+	
+<div class="logos">
+        <div class="logos-slide">
+            <img src="altshuler-logo.png" alt="Altshuler Logo">
+            <img src="yalin-logo.png" alt="Yalin Logo">
+            <img src="migdal-logo.png" alt="Migdal Logo">
+            <img src="meitav-logo.png" alt="Meitav Logo">
+            <img src="menora-logo.png" alt="Menora Logo">
+            <img src="mor-logo.png" alt="Mor Logo">
+            <img src="clal-logo.png" alt="Clal Logo">
+            <img src="fenix-logo.png" alt="Fenix Logo">
+            <img src="analist-logo.png" alt="Analist Logo">
+            <img src="ayalon-logo.png" alt="Ayalon Logo">
+            <img src="hachshara-logo.png" alt="Hachshara Logo">
+            <img src="harel-logo.png" alt="Harel Logo">
+            <!-- Duplicate logos for seamless scrolling -->
+            <img src="altshuler-logo.png" alt="Altshuler Logo">
+            <img src="yalin-logo.png" alt="Yalin Logo">
+            <img src="migdal-logo.png" alt="Migdal Logo">
+            <img src="meitav-logo.png" alt="Meitav Logo">
+            <img src="menora-logo.png" alt="Menora Logo">
+            <img src="mor-logo.png" alt="Mor Logo">
+            <img src="clal-logo.png" alt="Clal Logo">
+            <img src="fenix-logo.png" alt="Fenix Logo">
+            <img src="analist-logo.png" alt="Analist Logo">
+            <img src="ayalon-logo.png" alt="Ayalon Logo">
+            <img src="hachshara-logo.png" alt="Hachshara Logo">
+            <img src="harel-logo.png" alt="Harel Logo">
+        </div>
+    </div>
+
+   <script>
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+       
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Add entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
