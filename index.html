@@ -410,8 +410,16 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: grid;
+            grid-template-rows: 25% 25% 30% 20%;
         }
-
+        .flx {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn{padding-top: 15px;}
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
@@ -424,20 +432,20 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            height: 15%;
+           
         }
 
         .feature-title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #333;
-             height: 20%;
+             
         }
 
         .feature-description {
             color: #666;
             margin-bottom: 1.5rem;
-             height: 30%;
+             
         }
 
         /* CTA Section */
@@ -674,8 +682,8 @@
                         <h1 class="hero-title">המוצרים הפנסיונים המובילים</h1>
                         <p class="hero-subtitle">מי מרוויח יותר ואיפה משלמים פחות דמי ניהול</p>
                         <div class="hero-cta">
-                            <a href="#products" class="cta-button">מוצרים פנסיונים</a>
-                            <a href="#consultation" class="cta-button">השוואת מוצרים</a>
+                            <a href="#products" class="cta-button">למוצרים</a>
+                            <a href="#consultation" class="cta-button">להשוואה </a>
                         </div>
                     </div>
                     <div class="hero-visual">
@@ -718,10 +726,10 @@
             <h2 class="section-title">?למה לבחור בנו</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fa fa-check" style="font-size:3rem"></i></div>
-                    <h3 class="feature-title">יעוץ מקצועי ומותאם אישית</h3>
-                    <p class="feature-description">המומחים שלנו יבנו עבורך אסטרטגיה פנסיונית מותאמת למטרות ולמצב הכלכלי הייחודי שלך</p>
-                    <a href="#consultation" class="cta-button">קבל יעוץ</a>
+                    <div class="feature-icon flx"><i class="fa fa-check" style="font-size:3rem"></i></div>
+                    <h3 class="feature-title flx">יעוץ מקצועי ומותאם אישית</h3>
+                    <p class="feature-description flx">המומחים שלנו יבנו עבורך אסטרטגיה פנסיונית מותאמת למטרות ולמצב הכלכלי הייחודי שלך</p>
+                    <a href="#consultation" class="cta-button btn">קבל יעוץ</a>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-chart-line" style="font-size:3rem;">
@@ -729,7 +737,7 @@
                     </i></div>
                     <h3 class="feature-title">ניתוח תשואות מתקדם</h3>
                     <p class="feature-description">בכלים שאנו מציעים תוכל לבצע ניתוחים  בצורה מקצועית וייחודית</p>
-                    <a href="hashmen.html" class="cta-button">השתמש בכלים</a>
+                    <a href="hashmen.html" class="cta-button btn">השתמש בכלים</a>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa fa-calculator" style="font-size:3rem;"></i></div>
@@ -741,13 +749,13 @@
                     <div class="feature-icon"><i class="fas fa-user-shield" style="font-size:3rem;"></i></div>
                     <h3 class="feature-title">התאמת  לאופי סיכון</h3>
                     <p class="feature-description">באמצעותנו תוכל לאפיין את רמת הסיכון שלך ואת המוצרים המתאימים לרמת הסיכון</p>
-                    <a href="#consultation" class="cta-button">למד עוד</a>
+                    <a href="#consultation" class="cta-button btn">למד עוד</a>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa fa-bolt" style="font-size:3rem"></i></div>
                     <h3 class="feature-title">שירות מהיר ואמין</h3>
                     <p class="feature-description">אצלנו תקבל מענה מקצועי ומהיר לכל שאלה, עם ליווי צמוד לאורך כל הדרך</p>
-                    <a href="#contact" class="cta-button">צור קשר</a>
+                    <a href="#contact" class="cta-button btn">צור קשר</a>
                 </div>
             </div>
         </div>
