@@ -1,0 +1,1203 @@
+<html lang="heb">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+
+  <title>ezFinnaci</title>
+  <style>
+	.mainTitle{
+
+			text-align: center;
+			margin: 50px 0;
+			font-size: 1.5rem;
+			color: #333;
+			max-width: 1400px;
+			display: flex;
+			justify-content: center;
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 15vh;
+			padding: 20px;
+			 
+		}
+		
+		#services{
+			padding-bottom: 0%;
+			padding-top: 0%;
+		}
+		.secondTitle{
+			margin-top: 10px;
+		}
+		.mainTitle .feature-card {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.mainTitle .feature-title {
+			text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+			line-height: 1.2;
+		}
+
+		.mainTitle .feature-description{
+			font-size: 1.8rem;
+			font-weight: lighter;
+		}
+		.mainTitle .cta-button{
+			margin-top: 80px;
+		}
+	.feature-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 20px;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+		text-align: center;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.feature-card:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+	}
+
+	.feature-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.feature-title {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: #333;
+	}
+
+	.feature-description {
+		color: #666;
+		margin-bottom: 1.5rem;
+	}
+	
+    .logos {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+			position: relative;
+			bottom: 25px;
+			margin: 25px 0px;
+        }
+
+        .logos-slide {
+            display: flex;
+            animation: scroll 75s linear infinite;
+        }
+
+        .logos-slide img {
+            height: 100px; /* Adjust height as needed */
+            margin: 0 20px; /* Space between logos */
+            flex-shrink: 0;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Move half the width for seamless loop */
+            }
+        }
+
+        /* Optional: Pause animation on hover */
+        .logos:hover .logos-slide {
+            animation-play-state: paused;
+        }
+		
+
+		.logos-slide img {
+			width: 200px; /* Adjust width as needed */
+			height: 60px; /* Maintain aspect ratio */
+			margin: 10px 80px ; /* Space between logos */
+			transition: transform 0.3s ease; /* Smooth scaling effect */
+		}
+		
+		.logos-slide img:last-child {
+			margin-right: 0; /* Remove margin from the last image */
+		}
+  
+  
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+			background: #f8fafc;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+			margin-bottom: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Hero Section with Slider */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .slider-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+        }
+
+        /* Slide Backgrounds */
+        .slide:nth-child(1) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f0f2ff" width="1200" height="800"/><g fill="%23667eea" opacity="0.1"><circle cx="200" cy="200" r="80"/><circle cx="800" cy="300" r="60"/><circle cx="1000" cy="600" r="100"/></g></svg>');
+        }
+
+        .slide:nth-child(2) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23e6f7ff" width="1200" height="800"/><g fill="%234facfe" opacity="0.1"><rect x="100" y="100" width="100" height="100" rx="10"/><rect x="700" y="200" width="80" height="80" rx="10"/><rect x="900" y="500" width="120" height="120" rx="10"/></g></svg>');
+        }
+
+        .slide:nth-child(3) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23fff5e6" width="1200" height="800"/><g fill="%23fa709a" opacity="0.1"><polygon points="200,150 250,100 300,150 250,200"/><polygon points="800,250 850,200 900,250 850,300"/><polygon points="1000,550 1050,500 1100,550 1050,600"/></g></svg>');
+        }
+
+        .slide:nth-child(4) {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f0fff4" width="1200" height="800"/><g fill="%23a8edea" opacity="0.1"><ellipse cx="200" cy="200" rx="60" ry="40"/><ellipse cx="800" cy="300" rx="80" ry="50"/><ellipse cx="1000" cy="600" rx="70" ry="45"/></g></svg>');
+        }
+
+        .slide:nth-child(5) {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23fff0f5" width="1200" height="800"/><g fill="%23ff9a9e" opacity="0.1"><path d="M200 200 L250 150 L300 200 L250 250 Z"/><path d="M800 300 L850 250 L900 300 L850 350 Z"/><path d="M1000 600 L1050 550 L1100 600 L1050 650 Z"/></g></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            height: 100%;
+        }
+
+        .hero-text {
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-icon {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: float 6s ease-in-out infinite;		
+        }
+
+      @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+	
+
+        /* Slider Controls */
+        .slider-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Slider Arrows */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-arrow.prev {
+            left: 30px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+        }
+
+        .slider-arrow.next {
+            right: 30px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            height: 25%;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+             height: 15%;
+        }
+
+        .feature-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+             height: 30%;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+			border-radius: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1400px;	
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button-white {
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+	.logoimg{
+                width: 200px;
+                height: auto;
+                
+            }
+	.slider-touch {display: none;}
+         @media (max-width: 1400px) {
+            .logoimg{
+                width: 200px;
+                height: auto;
+                
+            }
+         }
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+		
+		.hero-text h1 {
+            font-size: 1.5rem;
+        }
+        .slider-arrow.prev,.slider-arrow.next {
+           display: none;
+        }
+		.mainTitle {
+			margin-left: 10%;
+			margin-right: 10%;
+		}
+		.mainTitle .feature-card {
+			flex-direction: column;
+			align-items: center;
+			gap:2rem;
+			
+		}
+		.mainTitle .cta-button{
+			margin-top: -35px;
+			font-size: 1rem;
+			
+		}
+		.mainTitle .feature-title{
+			font-size: 2rem;
+			padding-bottom: 0%;
+			margin-bottom: 0%;
+		}
+		.mainTitle .hero-icon{
+			margin-top: 40px;
+		}
+		.mainTitle .feature-description{
+			display: flex;
+			padding-bottom: 25px;
+			font-size: 1.5rem;
+			height: auto;
+			
+		}
+            .feature-title {
+               height: 25%;}
+
+            .logoimg{
+                width: 150px;
+                height: auto;
+            }
+			
+			.header {
+				padding: 0.5rem 0;
+			}
+
+			.nav-container {
+				padding: 0 1rem;
+			}
+
+			.nav-menu {
+				display: none;
+			}
+
+			.hamburger {
+				display: flex;
+			}
+
+			.nav-menu.active {
+				display: flex;
+			}
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: right 0.3s ease;
+            }
+			
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+                padding: 2rem 1rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+                font-size: 1.1rem;
+				
+            }
+
+            .hero-icon {
+                width: 120px;
+                height: 120px;
+                font-size: 3.5rem;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+				margin-right: -5%;
+				margin-left: -5%;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .slider-arrow.prev {
+                right: 15px;
+            }
+
+            .slider-arrow.next {
+                left: 15px;
+            }
+			.slider-touch {
+				width: 100%;
+				font-size: 1.2rem;
+				color: #fff;
+				z-index: 1000;
+				position: relative;
+				top:10%;
+				display: flex;
+				justify-content: space-between;
+				padding: 0 20px;
+
+			}
+			.cta-section{
+				margin-left: 5%;
+				margin-right: 5%;
+			
+			}
+			.cta-section h1 {
+				font-size: 1.5rem;
+			}
+        .logos-slide img {
+			width: 150px; /* Adjust width as needed */
+			height: 45px; /* Maintain aspect ratio */
+			margin: 10px 60px ; /* Space between logos */
+			transition: transform 0.3s ease; /* Smooth scaling effect */
+		}
+		#altshuler-logo{
+			width:70px; /* Adjust width as needed */
+			height: 45px;	
+		}
+		}
+		.container .feature-card{
+			display: flex;
+			flex-direction: column;
+			align-items:space-between;
+			justify-content: center;
+			border-radius: 20px;
+		}
+    </style>
+</head>
+
+
+
+
+
+<body>
+
+    
+    
+    <header class="header" dir="rtl">
+        <div class="nav-container">
+            <div class="logo"> <img class="logoimg" src="logoxnew.png"/></div>
+            <nav class="nav-menu" id="navMenu">
+                <li><a href="#">בית</a></li>
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#calculators">מחשבונים</a></li>
+                                <li><a href="#about">איזור אישי</a></li>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+                <li><a href="#consultation" class="cta-button">יעוץ חינם</a></li>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+<!-- אחרי ה-</header> שלך -->
+<section class="investment-info" dir="rtl" style="margin-top:120px;">
+  <div class="container">
+
+    <!-- Title -->
+    <h2 class="section-title">מגדל גמל להשקעה מסלול כללי</h2>
+
+    <!-- Basic Info -->
+    <div class="feature-card" style="text-align:right;">
+      <h3 class="feature-title">מידע בסיסי על המסלול</h3>
+      <p><strong>מסלול השקעה:</strong> כללי</p>
+      <p><strong>שם החברה המנהלת:</strong> מגדל מקפת קרנות פנסיה וקופות גמל</p>
+      <p><strong>סוג המוצר:</strong> קופת גמל להשקעה</p>
+      <p><strong>מדיניות השקעה:</strong> מסלול כללי – השקעה מגוונת במניות, אג"ח ומכשירים פיננסיים נוספים.</p>
+    </div>
+
+    <!-- Performance Table -->
+    <div class="feature-card" style="margin-top:20px;overflow-x:auto;">
+      <h3 class="feature-title">נתוני תשואות</h3>
+      <table style="width:100%; border-collapse: collapse; text-align:center;">
+        <thead style="background:linear-gradient(135deg, #667eea, #764ba2); color:white;">
+          <tr>
+            <th style="padding:10px;">תקופה</th>
+            <th style="padding:10px;">תשואה (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr style="background:#f8fafc;"><td style="padding:10px;">מתחילת השנה (YTD)</td><td style="padding:10px;">4.1%</td></tr>
+            <tr><td style="padding:10px;">12 חודשים אחרונים</td><td style="padding:10px;">7.2%</td></tr>
+            <tr style="background:#f8fafc;"><td style="padding:10px;">3 שנים</td><td style="padding:10px;">18.4%</td></tr>
+            <tr><td style="padding:10px;">5 שנים</td><td style="padding:10px;">32.7%</td></tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Performance Chart -->
+    <div class="feature-card" style="margin-top:20px;">
+      <h3 class="feature-title">גרף תשואות היסטורי</h3>
+      <canvas id="returnsChart" min-height="300"></canvas>
+    </div>
+     <div class="feature-card" style="margin-top:20px;overflow-x:auto;">
+      <h3 class="feature-title">השוואה מול מתחרים עיקריים</h3>
+      <table style="width:100%; border-collapse: collapse; text-align:center;">
+        <thead style="background:linear-gradient(135deg, #667eea, #764ba2); color:white;">
+          <tr>
+            <th style="padding:10px; text-align: right;">שם הקופה</th>
+            <th style="padding:10px;">מתחילת שנה (%)</th>
+            <th style="padding:10px;">12 חודשים (%)</th>
+            <th style="padding:10px;">3 שנים (%)</th>
+            <th style="padding:10px;">5 שנים (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr style="background:#f8fafc;">
+                <td style="padding:10px; text-align: right;">הראל גמל להשקעה כללי</td>
+                <td style="padding:10px;">6.1%</td>
+                <td style="padding:10px;">11.2%</td>
+                <td style="padding:10px;">18.4%</td>
+                <td style="padding:10px;">41.4%</td>
+            </tr>
+            <tr style="background:#f8fafc;">
+                <td style="padding:10px; text-align: right;">אלטשולר שחם גמל להשקעה כללי</td>
+                <td style="padding:10px;">5.1%</td>
+                <td style="padding:10px;">4.2%</td>
+                <td style="padding:10px;">12.4%</td>
+                <td style="padding:10px;">34.5%</td>
+            </tr> 
+            <tr style="background:#f8fafc;">
+                <td style="padding:10px; text-align: right;">מגדל גמל להשקעה כללי</td>
+                <td style="padding:10px;">4.4%</td>
+                <td style="padding:10px;">6.2%</td>
+                <td style="padding:10px;">16.4%</td>
+                <td style="padding:10px;">37.6%</td>
+            </tr>            <tr style="background:#f8fafc;">
+                <td style="padding:10px; text-align: right;">הפניקס גמל להשקעה כללי</td>
+                <td style="padding:10px;">3.8%</td>
+                <td style="padding:10px;">9.2%</td>
+                <td style="padding:10px;">22.4%</td>
+                <td style="padding:10px;">33.4%</td>
+            </tr> 
+            <tr style="background:#f8fafc;">
+                <td style="padding:10px; text-align: right;">מנורה גמל להשקעה כללי</td>
+                <td style="padding:10px;">3.75%</td>
+                <td style="padding:10px;">7.2%</td>
+                <td style="padding:10px;">18.4%</td>
+                <td style="padding:10px;">39.4%</td>
+            </tr>         
+        </tbody>
+      </table>
+    </div>
+    <div class="feature-card" style="margin-top:20px;min-height: 400px;">
+                <h3 class="feature-title">השוואה מול מתחרים עיקריים</h3>
+                <div class="chart-wrapper" style="margin-top:20px;min-height: 300px;">
+                    <canvas id="barChart"></canvas>
+                    <div id="chartTooltip" class="tooltip"></div>
+                </div>
+                <div id="chartLegend" class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4">
+                    <!-- Legend items will be populated by JavaScript -->
+                </div>
+    </div>
+    <div class="feature-card" style="margin-top:20px;overflow-x:auto;">
+      <h3 class="feature-title">נתוני סיכון</h3>
+      <table style="width:100%; border-collapse: collapse; text-align:center;">
+        <thead style="background:linear-gradient(135deg, #667eea, #764ba2); color:white;">
+          <tr>
+            <th style="padding:10px;">נתון</th>
+            <th style="padding:10px;">ערך</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr style="background:#f8fafc;"><td style="padding:10px;">שארפ</td><td style="padding:10px;">4.1%</td></tr>
+            <tr><td style="padding:10px;"> סטיית תקן ל - 3 שנים </td><td style="padding:10px;">7.2%</td></tr>
+            <tr style="background:#f8fafc;"><td style="padding:10px;">סטיית תקן ל - 5 שנים </td><td style="padding:10px;">18.4%</td></tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <!-- Asset Allocation -->
+    <div class="feature-card" style="margin-top:20px; text-align:center;">
+  <h3 class="feature-title">הרכב נכסים וחשיפות</h3>
+  <div style="max-width:350px; margin:0 auto;">
+    <canvas id="assetChart" height="250"></canvas>
+  </div>
+  <ul style="margin-top:15px; text-align:right;">
+    <li>חשיפה למניות: 45%</li>
+    <li>חשיפה למט"ח: 20%</li>
+    <li>חשיפה לנכסים לא סחירים: 5%</li>
+  </ul>
+</div>
+
+
+    <!-- Extra Info -->
+    <div class="feature-card" style="margin-top:20px;">
+      <h3 class="feature-title">מידע נוסף</h3>
+      <p style=" text-align: right;"><strong>דמי ניהול:</strong> 0.7% מהצבירה</p>
+      <p style=" text-align: right;"><strong>גודל הקופה:</strong> 1.2 מיליארד ₪</p>
+      <p style=" text-align: right;"><strong>דירוג סיכון:</strong> 4 מתוך 6</p>
+    </div>
+
+  </div>
+</section>
+<section class="features" id="services">
+        <div class="container">
+            <h2 class="section-title">?למה לבחור בנו</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="advicing.png" width="120" height="auto"/></div>
+                    <h3 class="feature-title">יעוץ אישי ומקצועי</h3>
+                    <p class="feature-description">המומחים שלנו יבנו עבורך אסטרטגיה פנסיונית מותאמת למטרות ולמצב הכלכלי הייחודי שלך</p>
+                    <a href="#consultation" class="cta-button">קבל יעוץ</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="tesuot.png" width="100" height="auto"/></div>
+                    <h3 class="feature-title">ניתוח תשואות מתקדם</h3>
+                    <p class="feature-description">בכלים שאנו מציעים תוכל לבצע ניתוחים  בצורה מקצועית וייחודית</p>
+                    <a href="hashmen.html" class="cta-button">השתמש בכלים</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="manwithcomputure.png" width="100" height="auto"/></i></div>
+                    <h3 class="feature-title">מחשבונים  מגוונים</h3>
+                    <p class="feature-description">במחשבונים שלנו תוכל לחשב ערך עתידי, הפקדה נדרשת לסכום מטרה והחזרי הלוואה חודשיים</p>
+                    <a href="help/gemelApi-main/Machshevonim.html" class="cta-button">בחר מחשבון</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="ofisikon.png" width="100" height="auto"/></div>
+                    <h3 class="feature-title">התאמה  לאופי סיכון</h3>
+                    <p class="feature-description">באמצעותנו תוכל לאפיין את רמת הסיכון שלך ואת המוצרים המתאימים לרמת הסיכון</p>
+                    <a href="#consultation" class="cta-button">למד עוד</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="sherut.png" width="100" height="auto"/></div>
+                    <h3 class="feature-title">שירות מהיר ואמין</h3>
+                    <p class="feature-description">אצלנו תקבל מענה מקצועי ומהיר לכל שאלה, עם ליווי צמוד לאורך כל הדרך</p>
+                    <a href="#contact" class="cta-button">צור קשר</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 dir="rtl" class="cta-title">מוכן להתחיל לתכנן את עתידך הפנסיוני?</h2>
+            <p class="cta-subtitle">קבל יעוץ מקצועי חינם ותתחיל לנהל את הכספים שלך בדרך הנכונה והרווחית</p>
+            <a href="#consultation" class="cta-button-white">יעוץ חינם עכשיו</a>
+        </div>
+    </section>	
+	
+<div class="logos">
+        <div class="logos-slide">
+    <img src="altshuler-logo.png" id="altshuler-logo" alt="Altshuler Logo">
+    <img src="yalin-logo.png" class="yalin-logo" alt="Yalin Logo">
+    <img src="migdal-logo.png" class="migdal-logo" alt="Migdal Logo">
+    <img src="meitav-logo.png" class="meitav-logo" alt="Meitav Logo">
+    <img src="menora-logo.png" class="menora-logo" alt="Menora Logo">
+    <img src="mor-logo.png" class="mor-logo" alt="Mor Logo">
+    <img src="clal-logo.png" class="clal-logo" alt="Clal Logo">
+    <img src="fenix-logo.png" class="fenix-logo" alt="Fenix Logo">
+    <img src="analist-logo.png" class="analist-logo" alt="Analist Logo">
+    <img src="ayalon-logo.png" class="ayalon-logo" alt="Ayalon Logo">
+    <img src="hachshara-logo.png" class="hachshara-logo" alt="Hachshara Logo">
+    <img src="harel-logo.png" class="harel-logo" alt="Harel Logo">
+
+    <!-- Duplicate logos for seamless scrolling -->
+    <img src="altshuler-logo.png" class="altshuler-logo" alt="Altshuler Logo">
+    <img src="yalin-logo.png" class="yalin-logo" alt="Yalin Logo">
+    <img src="migdal-logo.png" class="migdal-logo" alt="Migdal Logo">
+    <img src="meitav-logo.png" class="meitav-logo" alt="Meitav Logo">
+    <img src="menora-logo.png" class="menora-logo" alt="Menora Logo">
+    <img src="mor-logo.png" class="mor-logo" alt="Mor Logo">
+    <img src="clal-logo.png" class="clal-logo" alt="Clal Logo">
+    <img src="fenix-logo.png" class="fenix-logo" alt="Fenix Logo">
+    <img src="analist-logo.png" class="analist-logo" alt="Analist Logo">
+    <img src="ayalon-logo.png" class="ayalon-logo" alt="Ayalon Logo">
+    <img src="hachshara-logo.png" class="hachshara-logo" alt="Hachshara Logo">
+    <img src="harel-logo.png" class="harel-logo" alt="Harel Logo">
+</div>
+
+    </div>
+<!-- Chart.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Data for the bar chart (extracted from your comparison table)
+        const barChartData = {
+            labels: [
+                'הראל גמל להשקעה כללי',
+                'אלטשולר שחם גמל להשקעה כללי',
+                'מגדל גמל להשקעה כללי',
+                'הפניקס גמל להשקעה כללי',
+                'מנורה גמל להשקעה כללי'
+            ],
+            datasets: [
+                {
+                    label: 'מתחילת שנה (%)',
+                    data: [6.1, 5.1, 4.4, 3.8, 3.75],
+                    backgroundColor: '#8884d8', // Color for 'תשואה תקופה 1'
+                    borderRadius: 5,
+                },
+                {
+                    label: '12 חודשים (%)',
+                    data: [11.2, 4.2, 6.2, 9.2, 7.2],
+                    backgroundColor: '#82ca9d', // Color for 'תשואה תקופה 2'
+                    borderRadius: 5,
+                },
+                {
+                    label: '3 שנים (%)',
+                    data: [18.4, 12.4, 16.4, 22.4, 18.4],
+                    backgroundColor: '#ffc658', // Color for 'תשואה תקופה 3'
+                    borderRadius: 5,
+                },
+                {
+                    label: '5 שנים (%)',
+                    data: [41.4, 34.5, 37.6, 33.4, 39.4],
+                    backgroundColor: '#ff7300', // Color for 'תשואה תקופה 4'
+                    borderRadius: 5,
+                }
+                
+            ]
+        };
+
+        // Returns chart (Line Chart from user's code)
+        const ctx1 = document.getElementById('returnsChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['ינואר', 'מרץ', 'מאי', 'יולי', 'ספטמבר', 'נובמבר'],
+                datasets: [{
+                    label: 'תשואה מצטברת (%)',
+                    data: [0, 3.2, 5.1, 8, 13, 15],
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102,126,234,0.2)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        rtl: true, // Enable RTL for legend
+                        labels: {
+                            usePointStyle: true,
+                            font: { family: 'Inter' }
+                        }
+                    },
+                    tooltip: {
+                        rtl: true, // Enable RTL for tooltip
+                        titleFont: { family: 'Inter' },
+                        bodyFont: { family: 'Inter' }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { font: { family: 'Inter' } }
+                    },
+                    y: {
+                        ticks: { font: { family: 'Inter' } }
+                    }
+                }
+            }
+        });
+
+        // Bar Chart (Vertical)
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: barChartData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Allow chart to fill its container
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        rtl: true, // Enable RTL for legend
+                        labels: {
+                            usePointStyle: true,
+                            font: { family: 'Inter' }
+                        }
+                    },
+                    tooltip: {
+                        rtl: true, // Enable RTL for tooltip
+                        titleFont: { family: 'Inter' },
+                        bodyFont: { family: 'Inter' }
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: false, // Set to true for stacked bars if needed
+                        ticks: {
+                            autoSkip: false, // Prevent skipping labels
+                            maxRotation: 45, // Rotate labels for readability
+                            minRotation: 45,
+                            font: { family: 'Inter' }
+                        },
+                        grid: {
+                            display: false // Hide vertical grid lines
+                        }
+                    },
+                    y: {
+                        stacked: false, // Set to true for stacked bars if needed
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%'; // Add % to Y-axis labels
+                            },
+                            font: { family: 'Inter' }
+                        },
+                        grid: {
+                            color: '#eee' // Light horizontal grid lines
+                        }
+                    }
+                }
+            }
+        });
+
+        // Asset allocation chart (Pie Chart from user's code)
+        const ctx2 = document.getElementById('assetChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ['מניות', 'אג"ח קונצרני', 'אג"ח ממשלתי', 'נדל"ן', 'מזומן'],
+                datasets: [{
+                    data: [45, 25, 15, 5, 10],
+                    backgroundColor: ['#667eea', '#764ba2', '#4facfe', '#fa709a', '#fee140']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right', // Position legend to the right
+                        rtl: true, // Enable RTL for legend
+                        labels: {
+                            usePointStyle: true,
+                            font: { family: 'Inter' }
+                        }
+                    },
+                    tooltip: {
+                        rtl: true, // Enable RTL for tooltip
+                        titleFont: { family: 'Inter' },
+                        bodyFont: { family: 'Inter' }
+                    }
+                }
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            navMenu.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
