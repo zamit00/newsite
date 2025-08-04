@@ -767,7 +767,7 @@
 
 
     <header class="header" dir="rtl">
-	<audio id="myAudio" src="canvaAudio.mp3"></audio>
+	<audio id="myAudio" src="sound.mp3" muted></audio>
         <div class="nav-container">
             <div class="logo"> <img class="logoimg" src="logoxnew.png"/></div>
             <nav class="nav-menu" id="navMenu">
@@ -898,10 +898,24 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     // הפעלת הקול
-    const audio = document.getElementById("myAudio");
-    audio.play().catch(err => {
-        console.log("הדפדפן חסם את ההפעלה האוטומטית של הקול:", err);
+    audio.play().then(() => {
+        console.log("הקול התחיל במצב מושתק");
+    }).catch(err => {
+        console.log("בעיה בהפעלה מושתקת:", err);
     });
+
+    // כשהמשתמש עושה פעולה – ביטול ההשתקה
+    function unmuteAudio() {
+        audio.muted = false;
+        console.log("הקול אינו מושתק יותר");
+        document.removeEventListener("click", unmuteAudio);
+        document.removeEventListener("mousemove", unmuteAudio);
+        document.removeEventListener("keydown", unmuteAudio);
+    }
+
+    document.addEventListener("click", unmuteAudio);
+    document.addEventListener("mousemove", unmuteAudio);
+    document.addEventListener("keydown", unmuteAudio);
 });
 
 
