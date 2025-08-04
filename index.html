@@ -767,6 +767,7 @@
 
 
     <header class="header" dir="rtl">
+	<audio id="myAudio" src="canvaAudio.mp3"></audio>
         <div class="nav-container">
             <div class="logo"> <img class="logoimg" src="logoxnew.png"/></div>
             <nav class="nav-menu" id="navMenu">
@@ -895,7 +896,13 @@
 
 <script>
 
-
+document.addEventListener("DOMContentLoaded", function () {
+    // הפעלת הקול
+    const audio = document.getElementById("myAudio");
+    audio.play().catch(err => {
+        console.log("הדפדפן חסם את ההפעלה האוטומטית של הקול:", err);
+    });
+});
 
 
 
